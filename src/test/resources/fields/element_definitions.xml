@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Pages xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="../fields/xsd/element_rules.xsd">
+    <Page name="Главная" locator="//a[@text='Ипотека']" driver="Chrome">
+        <TextInput name="Строка поиска" locator="//input[@aria-label='Запрос' and @id='text']"/>
+        <Button name="Найти" locator="//button[.//*[text()='Найти']]"/>
+    </Page>
+    <Page name="Резульат поиска">
+        <Collection name="Список результатов" locator="//ul[@aria-label='Результаты поиска']/li" isLoaded="true">
+            <StaticText name="Заголовок" locator=".//*[contains(@class, '__url-text')]"/>
+            <Link name="Ссылка" locator=".//a[contains(@class, 'link_theme_outer')]/b"/>
+        </Collection>
+    </Page>
+    <Page name="Главная страница" locator="html">
+        <Button name="Карты" locator="//li//a[contains(text(), 'Карты')]"/>
+        <Button name="Кредитные карты"
+                locator="//a[contains(text(), 'Кредитные карты') and contains(@class, 'menu-section-link')]"/>
+        <Button name="Оформить карту" locator="//a[contains(text(), 'Оформить карту')]"/>
+        <Button name="Карта на 110 дней"
+                locator="//a[@class='b-card__link' and @href='/retail/cards/credit/110-days/']"/>
+        <TextInput name="Дата рождения" locator="//input[@id='3a5e72f4-6fad-4596-b9cf-d7f31a3db5fc.date.text']"/>
+        <TextInput name="ФИО" locator="//input[@id='91da7a96-e39b-4066-a9bc-5e1c2a168afd.autocomplete']"/>
+        <TextInput name="E-mail" locator="//input[@id='c5de6f14-1d89-446f-bcd9-58288ec6bd8f.text']"/>
+        <CheckBox name="Мужской" locator="//span[text()='Мужской']"/>
+        <StaticText name="Проверка телефона" locator="//span[text()='Телефон']"/>
+    </Page>
+</Pages>
